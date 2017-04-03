@@ -142,17 +142,17 @@ class TestClient(unittest.TestCase):
 
     @mock.patch.object(settings, 'STATSD_CLIENT', 'statsd.client')
     def test_normal(self):
-        eq_(get_client().__module__, 'statsd.client')
+        eq_(get_client().client.__module__, 'statsd.client')
 
     @mock.patch.object(settings, 'STATSD_CLIENT',
                        'django_statsd.clients.null')
     def test_null(self):
-        eq_(get_client().__module__, 'django_statsd.clients.null')
+        eq_(get_client().client.__module__, 'django_statsd.clients.null')
 
     @mock.patch.object(settings, 'STATSD_CLIENT',
                        'django_statsd.clients.toolbar')
     def test_toolbar(self):
-        eq_(get_client().__module__, 'django_statsd.clients.toolbar')
+        eq_(get_client().client.__module__, 'django_statsd.clients.toolbar')
 
     @mock.patch.object(settings, 'STATSD_CLIENT',
                        'django_statsd.clients.toolbar')

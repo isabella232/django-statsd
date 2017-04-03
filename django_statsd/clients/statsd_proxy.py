@@ -55,3 +55,6 @@ class StatsClientProxy(object):
         if rate is None:
             rate = self.default_rate
         return self.client.set(stat, value, rate=rate)
+
+    def __getattr__(self, key):
+        return getattr(self.client, key)
