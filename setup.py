@@ -10,7 +10,7 @@ setup(
     author='Andy McKay',
     author_email='andym@mozilla.com',
     license='BSD',
-    install_requires=['statsd==3.2.1'],
+    install_requires=['statsd >= 2.1.2, != 3.2 , <= 4.0'],
     packages=['django_statsd',
               'django_statsd/patches',
               'django_statsd/clients',
@@ -29,6 +29,8 @@ setup(
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'Operating System :: OS Independent',
-        'Framework :: Django'
+        'Framework :: Django',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3'
     ]
 )
